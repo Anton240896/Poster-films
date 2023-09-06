@@ -1,7 +1,10 @@
+/*===================DOM=========================*/
+
 const elem = {
     container: document.querySelector('.js-movie-list'),
     guard: document.querySelector('.js-guard')
 };
+/*==================DEFAULT==========================*/
 
 const defaults = {
   poster: "https://www.reelviews.net/resources/img/default_poster.jpg",
@@ -9,7 +12,7 @@ const defaults = {
   title: "Title not found",
   vote: "XX.XX",
 };
-
+/*=================OPTION-OBSERVER===========================*/
 
 const options = {
     // root: null,
@@ -18,6 +21,7 @@ const options = {
   };
 
   let page = 1;
+/*==================INFINITY-SCROLL==========================*/
 
   const observer = new IntersectionObserver(infinityScroll, options);
 
@@ -39,6 +43,7 @@ const options = {
       }
     });
   }
+/*=================SHOW-IMAGES===========================*/
 
 function createMarkup(arr) {
   return arr
@@ -60,6 +65,7 @@ function createMarkup(arr) {
     .join("");
 }
 
+/*=================BACK-END===========================*/
 
 serviceFilms()
 .then((data) => {
